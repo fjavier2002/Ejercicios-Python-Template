@@ -1,5 +1,5 @@
 # coding=utf-8
-__Author__="José Gaspar Sánchez García"
+__Author__="Fº Javier Cerá"
 
 """Escriba un programa que simule el juego **Piedra, papel, tijera** para dos jugadores. Las reglas del juego son las siguientes: 
     Simultáneamente, los dos jugadores muestran una mano en tres posibles posiciones:
@@ -50,7 +50,8 @@ def main():
         # print(nombre1+" ha sacado "+j1+".")
         # print(nombre2+" ha sacado "+j2+".")
         # Implemente los comentarios anteriores empleando print("".format())
-       
+        print("{} ha sacado {}.".format(nombre1, j1))
+        print("{} ha sacado {}.".format(nombre2, j2))
         
         ganador=quienGana(j1,j2)
         

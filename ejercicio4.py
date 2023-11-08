@@ -1,33 +1,20 @@
 # coding=utf-8
-__Author__="José Gaspar Sánchez García"
-
-"""Escriba un programa que simule el juego **Piedra, papel, tijera** para dos jugadores. Las reglas del juego son las siguientes: 
-    Simultáneamente, los dos jugadores muestran una mano en tres posibles posiciones:
-    - **Piedra:** se muestra el puño cerrado.
-    - **Papel:** se muestra la palma de la mano.
-    - **Tijera:** se muestra la palma de la mano con los dedos separados en dos grupos.
-    - El jugador que ha sacado **Piedra** gana al jugador que ha sacado *Tijera*.
-    - El jugador que ha sacado **Tijera** gana al jugador que ha sacado *Papel*.
-    - El jugador que ha sacado **Papel** gana al jugador que ha sacado *Piedra*."""
-
+__Author__="Fº Javier Cerá"
 
 import random
-
-# Función que determina quien gana Piedra, papel o tijera
-# 0: Empate.
-# 1: Gana Jugador 1.
-# 2: Gana Jugador 2.
 
 def quienGana(jugada1, jugada2) :
     if jugada1 == jugada2 :
         return 0
     elif jugada1 == "piedra" and jugada2 == "tijera" :
         return 1
-    # --> Complete su código <--
+    elif jugada1 == "tijera" and jugada2 == "papel" :
+        return 1
+    elif jugada1 == "papel" and jugada2 == "piedra" :
+        return 1
     else :
         return 2
 
-# Programa principal
 def main():
     print("PIEDRA, PAPEL, ... ¡TIJERA!")
 
@@ -39,9 +26,9 @@ def main():
     ganadas2=0
 
     while numeroTirada > 0 :
-        print("Tirada nº "+numeroTirada+":")
+        print("Tirada nº "+str(numeroTirada)+":")
         j1 = random.choice(["piedra", "papel", "tijera"])
-        j2 = "piedera" # Implemente tirada aleatoria para el jugador 2.
+        j2 = random.choice(["piedra", "papel", "tijera"])
         
         print(nombre1+" ha sacado "+j1+".")
         print(nombre2+" ha sacado "+j2+".")
@@ -61,10 +48,10 @@ def main():
         
         numeroTirada=numeroTirada-1
 
-    # Resultado final de todas las tiradas
     if ganadas1 == ganadas2 :
         print("HAN EMPATADO")
-   # --> Complete código <--
+    elif ganadas1 > ganadas2 :
+        print("GANA "+nombre1)
     else :
         print("GANA "+nombre2)
 

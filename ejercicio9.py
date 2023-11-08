@@ -1,17 +1,17 @@
 # coding=utf-8
-__Author__="José Gaspar Sánchez García"
+__Author__="Fº Javier Cerá"
 
 def suma(x,y) :
-    return x
+    return x+y
 
 def resta(x,y) :
-    return x
+    return x-y
 
 def multiplica(x,y) :
-    return x
+    return x*y
 
 def divide(x,y) :
-    return y
+    return x/y
 
 # Función que crea el menú de la aplicacion.
 
